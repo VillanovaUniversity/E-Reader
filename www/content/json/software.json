@@ -1,0 +1,128 @@
+[
+  {
+    "Name":"angular-animate",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2010-2015 Google, Inc.",
+    "URL":"http://angularjs.org"
+  },
+  {
+    "Name":"angular-bootstrap",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2012-2015 the AngularUI Team",
+    "URL":"https://github.com/organizations/angular-ui/teams/291112"
+  },
+  {
+    "Name":"angular-filter",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2015 Ariel Mashraki",
+    "URL":""
+  },
+  {
+    "Name":"angular-sanitize",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2010-2015 Google, Inc.",
+    "URL":"http://angularjs.org"
+  },
+  {
+    "Name":"angular-touch",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2010-2015 Google, Inc.",
+    "URL":"http://angularjs.org"
+  },
+  {
+    "Name":"angular-ui-router",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2013-2015 The AngularUI Team, Karsten Sperling",
+    "URL":""
+  },
+  {
+    "Name":"AngularJS",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2010-2015 Google, Inc.",
+    "URL":"http://angularjs.org"
+  },
+  {
+    "Name":"Annotator",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2015 the Annotator project contributors",
+    "URL":""
+  },
+  {
+    "Name":"Annotator Touch Plugin",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2012-2013 Compendio",
+    "URL":"http://www.compendio.ch"
+  },
+  {
+    "Name":"Bootstrap",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2011-2015 Twitter, Inc",
+    "URL":""
+  },
+  {
+    "Name":"FastClick",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2014 The Financial Times Ltd.",
+    "URL":""
+  },
+  {
+    "Name":"findAndReplaceDOMText",
+    "License":"Unlicense",
+    "Copyright":"by James Padolsey",
+    "URL":"http://james.padolsey.com"
+  },
+  {
+    "Name":"iScroll",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2008-2012 Matteo Spinelli",
+    "URL":"http://cubiq.org"
+  },
+  {
+    "Name":"jQuery",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2014 jQuery Foundation and other contributors",
+    "URL":"http://jquery.com"
+  },
+  {
+    "Name":"Offline Annotator Plugin",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2012 Compendio",
+    "URL":"http://www.compendio.ch"
+  },
+  {
+    "Name":"Popcorn.js",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2011, Mozilla Foundation",
+    "URL":""
+  },
+  {
+    "Name":"Background Audio for iOS",
+    "License":"MIT License",
+    "Copyright":"Copyright (c) 2014 Aubrey Hewes",
+    "URL":"https://github.com/AubreyHewes/cordova-background-audio"
+  },
+  {
+    "Name":"cordova-file-cache",
+    "License":"MIT License",
+    "Copyright":"© 2014 - Mark Marijnissen",
+    "URL":"https://www.npmjs.com/package/cordova-file-cache"
+  },
+  {
+    "Name":"cordova-promise-fs",
+    "License":"MIT License",
+    "Copyright":"© 2014 - Mark Marijnissen",
+    "URL":"https://www.npmjs.com/package/cordova-promise-fs"
+  },
+  {
+    "Name":"cordova-plugin-file-transfer",
+    "License":"Apache 2.0",
+    "Copyright":"Copyright 2012 The Apache Software Foundation",
+    "URL":"https://www.npmjs.com/package/cordova-plugin-file-transfer"
+  },
+  {
+    "Name":"Apache Cordova",
+    "License":"Apache 2.0",
+    "Copyright":"Copyright© 2015, the Apache Software Foundation",
+    "URL":"https://projects.apache.org/project.html?cordova"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "id":1,
+    "Name":"Example Author",
+    "Brief":"This author did some amazing things to be included in this app! (Example image credit: https://commons.wikimedia.org/wiki/File:718smiley.svg)",
+    "Contribution":"Commentator",
+    "Contact":"example@example.com",
+    "Affiliation":"Example University",
+    "Image":"Example Author.png"
+  }
+]

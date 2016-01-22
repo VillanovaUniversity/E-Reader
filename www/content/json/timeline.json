@@ -1,0 +1,42 @@
+[
+    {
+        "ID": 0,
+        "YearLabel": "123 AD",
+        "Relation": "AugustinianEvent",
+        "Category": "YearAugustine",
+        "Sources": "",
+        "Event": ""
+  },
+    {
+        "ID": 1,
+        "YearLabel": "",
+        "Relation": "AugustinianEvent",
+        "Category": "Augustine",
+        "Sources": "Some Book",
+        "Event": "Something happened on this day"
+  },
+    {
+        "ID": 2,
+        "YearLabel": "",
+        "Relation": "HistoricEvent",
+        "Category": "Historic",
+        "Sources": "",
+        "Event": "Something else happened."
+  },
+    {
+        "ID": 3,
+        "YearLabel": "134 AD",
+        "Relation": "HistoricEvent",
+        "Category": "YearHistoric",
+        "Sources": "",
+        "Event": ""
+  },
+    {
+        "ID": 4,
+        "YearLabel": "",
+        "Relation": "HistoricEvent",
+        "Category": "Historic",
+        "Sources": "",
+        "Event": "Something happened."
+  }
+]

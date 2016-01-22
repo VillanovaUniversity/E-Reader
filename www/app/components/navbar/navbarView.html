@@ -1,0 +1,38 @@
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="navbarController" ng-hide="isHomePage">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+                    <button id="navBackButton" type="button" class="btn btn-default btn navbarCleanButton" ng-click="navigateBack()">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="col-xs-8">
+                    <h3 class="nav-title text-center"><a id="navBarTitlePage">{{title}}</a></h3>
+                </div>
+                <div class="col-xs-2 text-right">
+
+                    <div class="mainHamburgerMenu">
+                        <button class="btn btn-default dropdown-toggle navbarCleanButton" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                        </button>
+
+
+                        <ul class="dropdown-menu dropdown-menu-right navbarDropdownMenu" aria-labelledby="dropdownMenu1">
+                            <li ng-repeat="state in ::states">
+                                <a ui-sref="{{::state.slug}}" class="navbarHamburgerOptions">
+
+                                    <img ng-src='assets/images/icons/black_{{::state.slug}}.png' alt='Image' height="15px" class="navbarIcon">
+                                    <div class="hamburgerLinks">{{state.label}}</div>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</header>

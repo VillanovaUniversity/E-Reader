@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script type="text/javascript">
+        var number = 13;
+        var inputSrc = '../www/assets/compiledHTML/book' + number + '.html';
+        var wordStartsPath = "../www/assets/audioTimes/book" + number + ".js";
+
+
+        $(document).ready(function() {
+            $.get(wordStartsPath, function(wordStarts) {
+                wordStarts = wordStarts.split(',');
+                $('#result').load(inputSrc, function() {
+                    processWords($('w'), wordStarts);
+                });
+            });
+
+        });
+
+        function processWords(words, wordStarts) {
+            
+//            console.log(wordStarts);
+
+            words.each(function(index, word) {
+//                console.log(index);
+
+//                console.log(wordStarts[index])
+
+                var startTime = wordStarts[index] / 1000;
+                var endTime = startTime + .5;
+
+                //                console.log(startTime);
+
+                word.setAttribute("st", startTime);
+                word.setAttribute("et", endTime);
+
+            });
+            console.log($('#result').html());
+        }
+
+    </script>
+</head>
+
+<body>
+
+    Text Processor
+
+    <pre id="result">
+    </pre>
+
+
+</body>
+
+</html>

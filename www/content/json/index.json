@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "book": "Book I",
+        "title": "Example Book",
+        "sections": "1",
+        "section": [
+            {
+                "title": "Section 1"
+            },
+            {
+                "title": "Section 2"
+            }
+        ]
+    }
+]

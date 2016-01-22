@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script type="text/javascript">
+        function process() {
+
+            var number = $('#bookNumber').val();
+            var inputSrc = '../www/assets/compiledHTML/book' + number + '.html';
+
+            $('#temp').load(inputSrc, function() {
+                //process();
+                giveParsIDs();
+                outputResults();
+            });
+
+        }
+
+        function getID(index) {
+            return 'par' + index;
+        }
+
+        function giveParsIDs() {
+            $.each($('p'), function(index, elm) {
+                $(elm).attr('id', getID(index));
+            });
+        }
+
+        function outputResults() {
+            //console.log($('#result').html());
+            $('#result').html($('#temp').html());
+            console.log('printing');
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <h1>Text Processor</h1> Book Number
+    <input type="number" id="bookNumber">
+    <button onclick="process()">Process</button>
+    <br>
+
+    <textarea id="result" style="height:100%;width:100%;">
+    </textarea>
+    <div id="temp" style="display:none"></div>
+
+
+</body>
+
+</html>

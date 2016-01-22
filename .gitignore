@@ -1,0 +1,16 @@
+npm-debug.log
+
+*.idea/
+
+node_modules/
+www/assets/bower_components/
+
+platforms/
+plugins/
+
+# Keystores
+*.keystore
+
+# Built application files
+*.apk
+*.ap_

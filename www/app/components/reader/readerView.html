@@ -1,0 +1,200 @@
+<style>
+    button.btn img {
+        color:black;
+    }
+</style>
+
+<div id="bookView" class="hasFooter" ui-view></div>
+
+<div ng-controller="readerToolsController ">
+    <div id="readerHighlightOverlay" ng-show="showPlayer"></div>
+    <footer>
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+
+            <div class="container">
+
+                <div class="row" ng-show="voiceplayerInitializing">
+                    <p>Initializing Voice-Over...</p>
+                </div>
+                <div class="row" ng-show="showPlayer">
+                    <audio id="voice" src="{{audioSRC}}" controls="true" preload="auto"></audio>
+                </div>
+                <div class="row">
+
+                    <div class="col-xs-2">
+                        <button class="btn btn-default" ng-click="voiceoverToggle()">
+                            <img src="assets/images/icons/black_speak.png" alt="Begin Voiceover">
+                        </button>
+                    </div>
+
+                    <div class="col-xs-2">
+                        <button ng-click="showSearchModal()" class="btn btn-default">
+                            <img src="assets/images/icons/black_search.png" alt="Search Text">
+                        </button>
+                    </div>
+                    <div class="col-xs-2">
+                        <span id="textSelectionTools">
+                    <button id="addAnnotationButton" type="button" class="btn btn-default">
+                        <img src="assets/images/icons/black_pencil.png" alt="Add Annotation" >
+                    </button>
+                </span>
+                    </div>
+                    <div class="col-xs-2">
+                        <button class="btn btn-default" ng-click="showAnnotationSelect()">
+                            <img src="assets/images/icons/black_comments.png" alt="Filter Annotations">
+                        </button>
+                    </div>
+                    <div class="col-xs-2">
+                        <button class="btn btn-default" ng-click="showBookmarkModal()">
+                            <img src="assets/images/icons/black_bookmark.png" alt="Bookmarks">
+                        </button>
+                    </div>
+                    <div class="col-xs-2">
+                        <button class="btn btn-default" ng-click="showJumpModal()">
+                            <img src="assets/images/icons/black_table_of_content.png" alt="Jump to...">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </footer>
+</div>
+
+<script type="text/ng-template" id="searchTemplate.html">
+    <div class="modal-header">
+        <h3 class="modal-title">
+            Search
+        </h3>
+    </div>
+    <div class="modal-body" stop-event="touchend">
+        <form class="form-inline">
+            <div id="warning"></div>
+
+            <div class="form-group">
+                <input type="text" ng-model="term" class="form-control" placeholder="Enter search term here" ng-change="numResults = null">
+            </div>
+            <p ng-show="numResults != null">{{numResults}} Results</p>
+            <div class="modal-footer">
+                <div class="form-group">
+                    <button class="btn btn-default" ng-click="search()">Search</button>
+                    <button class="btn btn-default" ng-click="previous()">Previous</button>
+                    <button class="btn btn-default" ng-click="next()">Next</button>
+                    <button class="btn btn-default" ng-click="cancel()">Done</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</script>
+
+<script type="text/ng-template" id="bookmarkModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">
+            Bookmarks
+        </h3>
+    </div>
+    <div class="modal-body bookmarksModalBody" stop-event="touchend">
+
+
+        <form class="form-horizontal">
+            <div class="form-group col-xs-10 col-md-10">
+                <input placeholder="New Bookmark Name" ng-model="newBookmarkName" type="text" class="form-control">
+            </div>
+            <button class="btn btn-default col-xs-2 col-md-2" ng-click="addBookmark()">
+                <img src="assets/images/icons/black_bookmark_add_2.png" alt="Add Bookmark" class="img-responsive">
+            </button>
+        </form>
+
+        <table class="table">
+            <thead>
+                <td>#</td>
+                <td>Name</td>
+                <td>Book,&nbsp;Par</td>
+                <td>Actions</td>
+            </thead>
+            <tbody>
+                <tr ng-repeat="bookmark in listOfBookmarks track by $index">
+                    <td>
+                        {{$index+1}}
+                    </td>
+                    <td>
+                        <a ui-sref="reader.books({bookNumber: bookmark.bookNumber, '#': bookmarks.getID(bookmark.parIndex)})">{{bookmark.name}}</a>
+                    </td>
+                    <td>
+                        {{bookmark.bookNumber}}, {{bookmark.parIndex}}
+                    </td>
+                    <td>
+                        <button class="btn btn-default" ng-click="bookmarks.remove(bookmark)">
+                            <img src="assets/images/icons/black_bookmark_delete_1.png" alt="Delete Bookmark" class="img-responsive">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="cancel()">Done</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="jumpTemplate.html">
+    <div class="modal-header">
+        <h3 class="modal-title">
+            Jump to...
+        </h3>
+    </div>
+    <div class="modal-body jumpModalBody" stop-event="touchend">
+        <select class="input-block-level form-control" id="jumpModalSelect" ng-model="jumpSelectModel" ng-change="change()"></select>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" type="button" ng-click="cancel()">Done</button>
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="annotationModal.html">
+    <div class="modal-header">
+        <button class="close" ng-click="cancel()"><img src="assets/images/icons/black_delete.png" height="20px"></button>
+        <h3 class="modal-title">
+            <annotation clickable="false" anid="{{displayNumber}}" type="{{annotation.type}}" /> {{annotation.typeName}}
+        </h3>
+    </div>
+    <div class="modal-body" stop-event="touchend">
+        <p class="authorName">{{annotation.attribution}}</p>
+        <div ng-bind-html="annotation.content"></div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="cancel()">Done</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="annotationSelectModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">
+            Annotation Select
+        </h3>
+    </div>
+    <div class="modal-body" stop-event="touchend" id="annotationSelectModal">
+        <table class="table">
+            <tbody>
+                <tr ng-repeat="(typeID, annType) in annotationTypes">
+                    <td>
+                        <annotation clickable="false" type="{{typeID}}" />
+                    </td>
+                    <td>
+                        {{annType.name}}
+                    </td>
+                    <td>
+                        <input type="checkbox" ng-model="annType.visible" ng-change="annType.updateViewVisibility()">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="cancel()">Done</button>
+    </div>
+</script>

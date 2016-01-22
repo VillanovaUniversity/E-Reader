@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta http-equiv="Content-Security-Policy" content="* * 'self' default-src 'unsafe-inline' 'unsafe-eval' http://* https://* data: cdvfile://* content://*;">
+
+    <title>E-Reader</title>
+
+    <!-- Styles -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <link href="assets/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/annotator-full.1.2.10/annotator.min.css" rel="stylesheet">
+    <link href="assets/js/annotator.touch.1.1.1/annotator.touch.css" rel="stylesheet">
+
+    <link href="app/app.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+    <!-- Include all bower components using `grunt wiredep` -->
+    <!-- bower:js -->
+    <script defer src="assets/bower_components/jquery/dist/jquery.js"></script>
+    <script defer src="assets/bower_components/angular/angular.js"></script>
+    <script defer src="assets/bower_components/angular-animate/angular-animate.js"></script>
+    <script defer src="assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script defer src="assets/bower_components/angular-touch/angular-touch.js"></script>
+    <script defer src="assets/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script defer src="assets/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+
+    <!-- Include some missed by Bower: -->
+    <script src="assets/bower_components/angular-sanitize/angular-sanitize.js" defer></script>
+    <script src="assets/bower_components/fastclick/lib/fastclick.js" defer></script>
+    <script src="assets/bower_components/iscroll/build/iscroll-zoom.js" defer></script>
+    <script src="assets/bower_components/angular-filter/dist/angular-filter.min.js" defer></script>
+    <script src="assets/bower_components/cordova-promise-fs/dist/CordovaPromiseFS.js" defer></script>
+    <script src="assets/bower_components/cordova-file-cache/dist/CordovaFileCache.js" defer></script>
+
+    <script src="app/app.module.js" defer></script>
+
+    <script src="assets/js/popcorn.js" defer></script>
+    <script src="assets/js/findAndReplaceDOMText.js" defer></script>
+
+    <!-- Annotator Scripts -->
+    <script src="assets/js/annotator-full.1.2.10/annotator-full.min.js" defer></script>
+    <script src="assets/js/annotator.offline.1.0.0/annotator.offline.min.js" defer></script>
+    <script src="assets/js/annotator.touch.1.1.1/annotator.touch.js" defer></script>
+
+    <!-- Page Scripts -->
+    <script src="app/components/navbar/navbarController.js" defer></script>
+    <script src="app/components/home/homeController.js" defer></script>
+    <script src="app/components/reader/readerController.js" defer></script>
+    <script src="app/components/reader/readerService.js" defer></script>
+    <script src="app/components/timeline/timelineController.js" defer></script>
+    <script src="app/components/timeline/timelineService.js" defer></script>
+    <script src="app/components/contributors/contributorsController.js" defer></script>
+    <script src="app/components/contributors/contributorsService.js" defer></script>
+    <script src="app/components/contributor/contributorController.js" defer></script>
+    <script src="app/components/contributor/contributorService.js" defer></script>
+    <script src="app/components/gallery/galleryController.js" defer></script>
+    <script src="app/components/gallery/galleryService.js" defer></script>
+    <script src="app/components/commentaries/commentariesController.js" defer></script>
+    <script src="app/components/commentaries/commentariesService.js" defer></script>
+    <script src="app/components/map/mapController.js" defer></script>
+    <script src="app/components/map/mapService.js" defer></script>
+    <script src="app/components/audio/audioController.js" defer></script>
+    <script src="app/components/audio/audioService.js" defer></script>
+    <script src="app/components/privacy/privacyController.js" defer></script>
+    <script src="app/components/privacy/privacyService.js" defer></script>
+    <script src="app/components/useTerms/useTermsController.js" defer></script>
+    <script src="app/components/useTerms/useTermsService.js" defer></script>
+    <script src="app/components/citations/citationsController.js" defer></script>
+    <script src="app/components/citations/citationsService.js" defer></script>
+    <script src="app/components/tableOfContents/tableOfContentsController.js" defer></script>
+    <script src="app/components/tableOfContents/tableOfContentsService.js" defer></script>
+    <script src="app/components/settings/settingsController.js" defer></script>
+    <script src="app/components/settings/settingsService.js" defer></script>
+    <script src="app/components/commentaries/commentariesController.js" defer></script>
+    <script src="app/components/commentaries/commentariesService.js" defer></script>
+    <script src="app/components/images/imagesController.js" defer></script>
+    <script src="app/components/images/imagesService.js" defer></script>
+    <script src="app/components/commentary/commentaryController.js" defer></script>
+    <script src="app/components/commentary/commentaryService.js" defer></script>
+    <script src="app/components/developers/developersController.js" defer></script>
+    <script src="app/components/developers/developersService.js" defer></script>
+    <script src="app/components/software/softwareController.js" defer></script>
+    <script src="indexcontroller.js" defer></script>
+
+
+</head>
+
+
+
+<body ng-app="confessions" ng-controller="indexcontroller" ng-cloak>
+
+    <ng-include src="'app/components/navbar/navbarView.html'"></ng-include>
+
+    <div class="container" ng-attr-id="{{isHomePage ? '' : 'main' }}">
+        <div ui-view></div>
+    </div>
+
+    <div>
+        <img id="loadingSpinner" src="assets/images/loadingSpinner.gif" alt="Loading...">
+    </div>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,17 @@
+<div ng-repeat="(key, value) in Software | groupBy:'License' | orderBy:'License'">
+    <div>
+        <h2>{{key}}</h2>
+        <div ng-repeat="entry in value">
+            <h3>{{entry.Name}}</h3>
+            <p>
+                {{entry.Copyright}}<span ng-if="entry.URL && entry.Copyright">, </span><a href="{{entry.URL}}">{{entry.URL}}</a>
+            </p>
+        </div>
+    </div>
+    <hr />
+</div>
+
+<div ng-repeat="license in licenses">
+    <h1 id="{{license.Name}}">{{license.Name}}</h1>
+    <pre>{{license.Text}}</pre>
+</div>
