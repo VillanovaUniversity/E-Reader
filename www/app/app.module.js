@@ -18,11 +18,8 @@ angular.module('confessions', [
     'confessions.commentaries',
     'confessions.images',
     'confessions.commentary',
-    'confessions.useTerms',
-    'confessions.privacy',
     'confessions.citations',
     'confessions.index',
-    'confessions.developers',
 	'confessions.software'
 
 ]).
@@ -91,16 +88,20 @@ constant('STATES', [
         showInNav: true
     },
     {
+<<<<<<< HEAD
         slug: 'privacy',
         label: "Privacy Policy",
         showInNav: false
     },
     {
+=======
+>>>>>>> opensource
         slug: 'citations',
         label: "Citations",
         showInNav: false
     },
     {
+<<<<<<< HEAD
         slug: 'developers',
         label: "Developers",
         showInNav: false
@@ -111,6 +112,8 @@ constant('STATES', [
         showInNav: false
     },
     {
+=======
+>>>>>>> opensource
         slug: 'software',
         label: "Software Licenses",
         showInNav: false

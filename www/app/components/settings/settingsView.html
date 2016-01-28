@@ -6,10 +6,10 @@
     h3 {
         font-size: 17px;
     }
-    li{
+    .mainOptions li{
         list-style:none;
     }
-    ul{
+    .mainOptions ul{
         padding: 0;
     }
     
@@ -31,6 +31,7 @@
     </p>
     <p>Version {{version}}-{{platform}}</p>
 
+<div class="mainOptions">
 <h3>Help Center</h3>
 <ul>
     <li>
@@ -65,12 +66,12 @@
 <h3>Legal</h3>
 <ul>
     <li>
-        <a ui-sref="useTerms">
+        <a ng-click="showModal('Terms of Use','useTerms')">
     Terms of Use
 </a>
     </li>
     <li>
-        <a ui-sref="privacy">
+        <a ng-click="showModal('Privacy Policy','privacyPolicy')">
    Privacy Policy
 </a>
     </li>
@@ -80,6 +81,7 @@
     	</a>
     </li>
 </ul>
+
 <h3>Credits List</h3>
 <ul>
     <li>
@@ -90,7 +92,8 @@
     </a>
     </li>
     <li>
-        <a ui-sref="developers">
+
+        <a ng-click="showModal('Development','developmentCredits')">
 
         Development
 
@@ -99,3 +102,14 @@
 </ul>
 
 </center>
+</div>
+
+<script type="text/ng-template" id="modal.html">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="cancel()"><img src="assets/images/icons/black_delete.png" height="20px"></button>
+        <h3 class="modal-title">{{modalTitle}}</h3>
+    </div>
+    
+    <div class="modal-body" stop-event="touchend" id="annotationSelectModal" ng-bind-html="modalContent">
+    </div>
+</script>
