@@ -1,0 +1,4 @@
+[submodule "www/content"]
+	path = www/content
+	url = https://github.com/VillanovaUniversity/E-Reader-Content.git
+	branch = master
