@@ -1,0 +1,129 @@
+@font-face {
+    font-family: GothamBook;
+    src: url("../assets/fonts/gotham-book-webfont.eot");
+    src: url("../assets/fonts/gotham-book-webfont.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: GoudyOldStyle;
+    src: url("../assets/fonts/goudyoldstylemtpro-regular-webfont.eot");
+    src: url("../assets/fonts/goudyoldstylemtpro-regular-webfont.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+.modal {
+    text-align: center;
+    display: flex !Important;
+}
+.modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    height: 100%;
+    margin-right: -0.01em;
+}
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    margin: auto;
+    width: 90%;
+}
+.redStyle {
+    color: #CE5450;
+}
+a {
+    color: #CE5450;
+}
+annotation>button {
+    border-radius: 4px;
+    padding: 0px 10px !Important;
+    border: none;
+    margin: 0px 3px;
+    color: #FFF;
+}
+button.footnote {
+    background: #478AA2 !Important;
+}
+button.commentary {
+    background: #CA804D !Important;
+}
+button.teaching-tip {
+    background: #845695 !Important;
+}
+button.highlight {
+    background: yellow !Important;
+}
+div.authorInfo.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+annotation button {
+    color: white;
+    border: 0px !Important;
+}
+search-result {
+    background-color: lightgrey;
+}
+#readerHighlightOverlay {
+    height: 20px;
+    width: 100%;
+    margin-top: 300px;
+    background-color: rgba(0, 0, 0, .25);
+    position: relative;
+    z-index: 5;
+}
+#addAnnotationButton[disabled] {
+    opacity: .40;
+}
+audio {
+    width: 100%;
+}
+div.bookmarksModalBody button {
+    width: 35px !important;
+    padding: 0px !important;
+    border: 0px !important;
+}
+div.bookmarksModalBody table button {
+    width: 20px !important;
+}
+#annotationSelectModal {
+    text-transform: capitalize;
+}
+h3.modal-title {
+    text-transform: capitalize;
+}
+h4 {
+    font-style: italic;
+}
+#importantFigures h4 {
+    font-weight: bold;
+}
+#bookView p button {
+    font-family: GothamBook;
+    font-size: 14px;
+}
+p.authorName {
+    font-weight: bold;
+}
+div.authorInfo h5 {
+    margin-top: 18px;
+}
+img#loadingSpinner {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 58px;
+    width: 58px;
+    margin-top: -29px;
+    margin-left: -29px;
+}
+nav.navbar-fixed-top button:active {
+    background-color: #991915 !important;
+}
+.outlined {
+    border:1px solid #555;
+}

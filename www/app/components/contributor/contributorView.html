@@ -1,0 +1,49 @@
+<style>
+    .authorName {
+        padding-top: 15px;
+    }
+    
+    p {
+        font-family: GothamBook;
+    }
+    
+    strong {
+        color: #ce5450;
+    }
+    
+    .profilePics {
+        padding: 8px;
+        float: left;
+    }
+
+</style>
+
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()"><img src="assets/images/icons/black_delete.png" height="20px"></button>
+    <div class="profilePics">
+        <img ng-src=content/images/bios/{{contributor.Image}} width="50" class="img-circle">
+    </div>
+    <h4 class="contributorsName redStyle authorName">{{contributor.Name}}</h4>
+
+</div>
+
+<div class="modal-body">
+
+    <div class="procedure-details">
+        <div>
+
+            <p>
+                <strong>Contribution:</strong> {{contributor.Contribution}}
+            </p>
+
+            <p>
+                <strong>Affiliation:</strong> {{contributor.Affiliation}}
+            </p>
+        </div>
+        <p ng-bind-html="contributor.Brief"></p>
+        <p><a href="mailto:{{contributor.Contact}}" stop-event="touchend">{{contributor.Contact}}</a></p>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancel()">Done</button>
+</div>

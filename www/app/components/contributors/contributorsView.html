@@ -1,0 +1,47 @@
+<style>
+    .contributorsContent{
+        padding-bottom: 75px;
+    }
+
+</style>
+<h2 id="contributorsPageHeader"></h2>
+<div class="contributorsContent">
+    <div class="row">
+        <div class="col-sm-6 col-md-4" ng-class="{'profilePicsActive': active}" ng-repeat="contributor in Contributors | filter:filterExpr">
+
+
+            <div class="row profile-row">
+                <div class="col-xs-2 col-md-2">
+                    <div class="profilePics">
+                        <a href="#/contributors" ng-click="showContributorModal(contributor.Name)">
+                            <img ng-src="content/images/bios/{{contributor.Image}}" width="50" class="img-circle">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-md-10">
+                    <div class="authorInfo">
+                        <a href="#/contributors" ng-click="showContributorModal(contributor.Name)">
+                            <h5 class="contributorsName redStyle">{{contributor.Name}}</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<footer>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+
+            <ul class="nav nav-pills">
+                <li role="presentation" ng-repeat="category in categories" ng-class="{active: activeCategoryStr == category.filterStr}">
+                    <a ui-sref="contributors" ng-click="changeFilter(category.filterStr)">{{category.label}}</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</footer>

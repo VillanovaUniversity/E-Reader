@@ -1,0 +1,26 @@
+<div class="row" ng-repeat="relation in Books.$$state.value">
+    <div>
+
+        <div class="col-md-12">
+            <h3>{{relation}}</h3>
+        </div>
+
+        <div class="col-sm-6 col-md-4" ng-repeat="commentary in Commentaries | filter: {relation: relation} : true">
+            <div class="row profile-row" ng-click="openCommentary(commentary)">
+
+                <div class="col-xs-2 col-md-2 authorInfo">
+                    <span>&bull;</span>
+                </div>
+                <div class="col-xs-10 col-md-10">
+
+                    <div class="authorInfo truncate">
+                        {{commentary.title}}
+                        <br><a ng-click="showContributorModal(commentary.author)" stop-event="touchStart touchend click"> {{commentary.author}}</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

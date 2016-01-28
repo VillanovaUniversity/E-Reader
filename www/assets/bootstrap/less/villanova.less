@@ -1,0 +1,345 @@
+/* Villanova Global Styles */
+h1, h2, h3, h4 {
+    
+    font-weight: normal;
+    font-style: normal;
+    font-family: GothamBook,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: @gray;
+    
+    & a {
+        
+        &:hover,
+        &:focus,
+        &:active {
+         
+            color: @gray-light;
+            
+        }
+        
+    }
+    
+}
+
+p {
+    
+    font-weight: normal;
+    font-style: normal;
+    font-family: GothamBook;
+    margin: 0 0 14px;
+    font-size: 120%;
+    
+}
+
+a {
+    
+    color: @vu-red;
+    
+    &:hover,
+    &:active,
+    &:focus{
+        
+       color: @gray-light;
+        
+    }
+    
+    
+}
+
+audio {
+    
+    width: 100%;
+    
+}
+
+/* Villanova Vairables */
+
+@vu-red:                #CE5450;
+@vu-blue:				#003366;
+@vu-blue-light:			#0078ae;
+@vu-blue-lighter:		#4b92db;
+@vu-blue-dark:			#002664;
+@vu-yellow:				#F7EED4;
+@vu-links:				#0088cc;
+@white:                 #FFF;
+
+/* Villanova  Global Structural Styles */
+
+
+#main {
+
+    padding-top: 60px;
+    padding-bottom: 100px;
+
+}
+
+    
+
+
+
+nav {
+    
+    padding: 10px 0px;
+    
+    & .nav {
+    
+        &.nav-pills>li.active>a,
+        &.nav-pills>li.active>a:hover,
+        &.nav-pills>li.active>a:focus {
+            
+            background-color: @vu-red;
+            
+        }
+        
+        & li a {
+            
+            &:hover,
+            &:focus,
+            &:active {
+                
+                background-color: @vu-red;
+                color: @white;
+                
+            }
+   
+        }
+        
+    }
+
+    &.navbar {
+
+        &.navbar-default {
+
+            background-color: @vu-red;
+
+            & h3.nav-title {
+                    
+                margin: 0px;
+                font-family: GothamBook,"Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 16px;
+                padding: 10px 0;
+                
+                & a {
+
+                    color: @white;
+
+                }
+
+            }
+            
+            & .btn-default {
+                
+                background-color: transparent;
+                border-color: transparent;
+                color: @white;
+                
+                &:active,
+                &:hover,
+                &:focus{
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+                
+            }
+            
+            & .btn {
+                &:active,
+                &:hover,
+                &:focus{
+
+                    box-shadow: none;
+
+                }
+            }
+
+        }
+    }
+}
+
+.mainHamburgerMenu {
+    
+    & .hamburgerLinks {
+        
+        padding: 5px;
+        display: inline-block;
+        
+    }
+    
+    & .dropdown-menu {
+    
+        & a:hover,
+        & a:active,
+        & a:focus{
+
+            background-color: @gray-lighter;
+
+        }
+        
+    }
+    
+}
+
+footer {
+    
+    & nav.navbar.navbar-default {
+     
+        background-color: @white;
+        
+    }
+    
+    & nav {
+        
+        text-align: center;
+        
+    }
+    
+    & img {
+        
+        max-width: 100%;
+        
+    }
+    
+    & button {
+        
+        max-width: 100%;
+        padding: 0px;
+        
+        &.btn {
+            padding: 0px;
+        }
+        
+    }
+    
+}
+
+/* Modal styles */
+
+.modal-header {
+    
+    border-bottom: none;
+    
+    & h3.modal-title {
+        text-align: center;
+        font-family: GothamBook,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    
+    & button {
+        
+        &.close {
+            
+            opacity: 0.7;
+            
+        }
+        
+    }
+    
+}
+
+.modal-body {
+    
+    & table {
+        
+        border-bottom: 1px solid @gray;
+        
+    }
+    
+}
+
+.modal-footer {
+    
+    text-align: center;
+    border-top: none;
+    
+    & .btn {
+        
+        background-color: transparent;
+        border-color: transparent;
+        text-decoration: underline;
+        box-shadow: none;
+        
+        &:active {
+            background-color: transparent;
+            border-color: transparent;
+        }
+        
+    }
+    
+    & .btn-default:active {
+            background-color: transparent;
+            border-color: transparent;
+    }
+    
+}
+
+
+/* Contributor styles */
+.profilePics {
+    
+    width: auto;
+    float: left;
+    padding: 10px;
+    
+}
+
+.authorInfo {
+    
+    padding: 10px;
+    width: auto;
+    float: left;
+    
+    & a {
+        
+        color: @vu-red;
+        
+    }
+    
+}
+
+
+/* Books */
+#tableofContents {
+    
+    h3 {
+     
+        margin-bottom: 3px;
+        
+    }
+    
+    & .book-contents {
+        
+        margin-bottom: 15px;
+        
+        & a {
+            display: block;
+            width: 100%;
+        }
+        
+    }
+    
+}
+
+#readerHighlightOverlay {
+    
+    height: 20px;
+    width: 100%;
+    margin-top: 300px;
+    background-color: rgba(0, 0, 0, .25);
+    position: absolute;
+    z-index: 5;
+    
+}
+    
+#addAnnotationButton[disabled] {
+    
+    opacity: .40;
+    
+}
+
+#bookView {
+    
+    p {
+        
+     font-family: GoudyOldStyle;
+        
+    }
+    
+}

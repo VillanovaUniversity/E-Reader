@@ -1,0 +1,19 @@
+{
+  "name": "ereader",
+  "version": "1.2.0",
+  "repository":"https://bitbucket.org/VillanovaUniversity/confessions.git",
+  "license":"SEE LICENSE IN LICENSE.txt",
+  "devDependencies": {
+    "cca": "^0.7.4",
+    "cordova": "^5.3.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.1",
+    "grunt-exec": "^0.4.6",
+    "grunt-force-task": "^1.0.0",
+    "grunt-wiredep": "^2.0.0",
+    "grunt-xmlpoke": "^0.8.0",
+    "load-grunt-tasks": "^3.2.0"
+  }
+}

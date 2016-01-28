@@ -1,0 +1,17 @@
+<div class="row" id="tableofContents">
+
+    <div class="col-md-6" ng-repeat="(bookIndex,book) in ::books">
+        <a ui-sref="reader.books({bookNumber: bookIndex+1, '#': 'Book{{::bookIndex+1}}'})">
+            <h3 class="commentariesRelationTitle">Book {{bookIndex+1}}: {{book.title}}</h3>
+        </a>
+        <ul>
+            <li ng-repeat="(sectionIndex,section) in book.section">
+                <a ui-sref="reader.books({bookNumber: bookIndex+1, '#': 'Book{{bookIndex+1}}Chapter{{sectionIndex+1}}'})" ng-bind-html="section.title"></a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</div>

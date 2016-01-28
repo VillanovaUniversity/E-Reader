@@ -1,0 +1,109 @@
+<style>
+    #locationInfo {
+        display: block;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        position: fixed;
+        top: 51%;
+        left: 0px;
+        right: 0px;
+        width: 75%;
+        max-width: none;
+        margin-top: 25px;
+    }
+    
+    #locationInfo .popover-content {
+        max-height: 200px;
+        overflow: auto;
+    }
+    
+    div.location {
+        opacity: 0;
+        border: 1px solid black;
+        width: 30px;
+        height: 30px;
+        padding: 0px;
+        margin: 0px;
+        margin-left: -15px;
+        margin-top: -15px;
+        line-height: 0px;
+        position: absolute;
+        cursor: pointer;
+    }
+    /* Required for iScroll5 */
+    
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    html {
+        -ms-touch-action: none;
+    }
+    
+    body {
+        overflow: hidden;
+    }
+    
+    #wrapper {
+        position: absolute;
+        top: 20;
+        left: 0;
+        right: 0;
+        height: 100%;
+        /*        bottom:0*/
+        background: #555;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    
+    #scroller {
+        width: 1536px;
+        height: 2048px;
+        background: url(content/images/map/map.png);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        -o-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+    /* Angular Animate styles */
+    
+    .animate-show {
+        opacity: 1;
+    }
+    
+    .animate-show.ng-hide-add,
+    .animate-show.ng-hide-remove {
+        transition: all linear 0.5s;
+    }
+    
+    .animate-show.ng-hide {
+        opacity: 0;
+    }
+</style>
+
+<div id="wrapper" ng-click="activeLocation = null">
+    <div id="scroller">
+
+        <div class="location" ng-repeat="location in locations" ng-if="location.imagex" ng-click="load(location, $event)" style="top:{{location.imagey}}px; left:{{location.imagex}}px;"></div>
+
+    </div>
+</div>
+
+<div id="locationInfo" class="popover bottom popover-static animate-show" ng-show="activeLocation" ng-style="{top:activeLocation.screenTop}">
+    <div class="arrow"></div>
+    <h3 class="popover-title">{{activeLocation.Location}} <span ng-if="activeLocation.Modern">({{activeLocation.Modern}})</span></h3>
+    <div class="popover-content">
+        <p>{{activeLocation.Caption}}</p>
+        <img ng-src="content/images/gallery/{{activeLocation.image}}" class="img-responsive" ng-if="activeLocation.image">
+    </div>
+
+</div>

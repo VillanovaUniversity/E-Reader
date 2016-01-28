@@ -1,0 +1,45 @@
+<style>
+    ul.pager {
+        margin: 0px;
+    }
+</style>
+
+<div class="row">
+
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h3>{{ImageData.Title}}</h3>
+        <img ng-src='content/images/gallery/{{ImageData.File}}' alt='Image' class='img-responsive center-block'>
+        <br>
+        <p>{{ImageData.Caption}}</p>
+
+        <table class="table">
+            <tr ng-repeat="dataPoint in dataPoints" ng-if="ImageData[dataPoint.key]">
+                <td>{{dataPoint.label}}:</td>
+                <td>{{ImageData[dataPoint.key]}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<footer>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <ul class="pager">
+                <li class="previous" ng-class="{'disabled':previousPage==0}">
+                    <a ui-sref="image({imageNumber: previousPage || '1' })">Previous</a>
+                </li>
+                <li>
+                    <a ui-sref="gallery" aria-label="Gallery">
+                        <!--                    <span class="glyphicon glyphicon-th" aria-hidden="true"></span>-->Gallery
+                    </a>
+                </li>
+                <li class="next" ng-class="{'disabled':imageNumber==Images.length}">
+                    <a ui-sref="image({imageNumber: nextPage}) ">Next</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</footer>

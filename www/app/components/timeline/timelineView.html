@@ -1,0 +1,164 @@
+<style>
+    footer nav {
+        padding: 0px;
+    }
+    
+    footer nav table {
+        margin-bottom: 0px !important;
+    }
+    
+    input[type="checkbox"] {
+        /*TODO : Make checkboxes bigger! */
+    }
+    
+    .timelineYearAugustine {
+        color: #CE5450;
+        padding-left: 20px;
+    }
+    
+    .timelineYearHistoric {
+        color: #999999;
+        padding-left: 20px;
+    }
+    
+    p.timelineEventData {
+        padding-left: 30px;
+        margin: 0px;
+    }
+    
+    p.timelineReference {
+        padding-left: 30px;
+        margin: 0px;
+        color: #999999;
+    }
+    
+    div.timelineVerticalLine {
+        float: left;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-left: thick solid #999999;
+        position: absolute;
+        padding-bottom: 75px;
+    }
+    /*   Footer Bubbles     */
+    
+    div.timelineFooterYearAugustine {
+        float: left;
+        border-radius: 50%;
+        background: #CE5450;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        margin-top: 2px;
+    }
+    
+    div.timelineFooterYearHistoric {
+        float: left;
+        border-radius: 50%;
+        background: #999999;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        margin-top: 2px;
+    }
+    /*   Year Bubbles     */
+    
+    div.timelineYearAugustine {
+        margin-top: .5px;
+        float: left;
+        border-radius: 50%;
+        background: #CE5450;
+        width: 25px;
+        height: 25px;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px #CE5450;
+        left: -15px;
+        position: absolute;
+        margin-bottom: -10px;
+    }
+    
+    div.timelineYearHistoric {
+        margin-top: .5px;
+        float: left;
+        border-radius: 50%;
+        background: #999999;
+        width: 25px;
+        height: 25px;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px #999999;
+        left: -15px;
+        position: absolute;
+        margin-bottom: -10px;
+    }
+    /*   Event Bubbles     */
+    
+    div.timelineAugustine {
+        margin-top: 2px;
+        float: left;
+        border-radius: 50%;
+        background: white;
+        width: 20px;
+        height: 20px;
+        border: 4px solid #CE5450;
+        left: -12.5px;
+        position: absolute;
+    }
+    
+    div.timelineHistoric {
+        margin-top: 2px;
+        float: left;
+        border-radius: 50%;
+        background: white;
+        width: 20px;
+        height: 20px;
+        border: 4px solid #999999;
+        left: -12.5px;
+        position: absolute;
+    }
+
+</style>
+
+<div class="timelineVerticalLine">
+    <ul class="nav">
+        <li ng-repeat="event in Events | filter:filterExpr">
+            <div class="timeline{{event.Category}}" id="timeline{{event.ID}}"></div>
+            <h3 class="timeline{{event.Category}}">{{event.YearLabel}}</h3>
+            <p class="timelineEventData">{{event.Event}}</p>
+            <p class="timelineReference"><i>{{event.Sources}}</i></p>
+        </li>
+    </ul>
+</div>
+
+
+<footer>
+    <nav class="navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <table class="table table-hover">
+
+                <tr>
+                    <td>
+                        <div class="timelineFooterYearAugustine"></div>
+                    </td>
+                    <td>Core Events</td>
+                    <td>
+                        <input type="checkbox" disabled="disabled" checked="checked" class="pull-right">
+                    </td>
+                </tr>
+                <tr ng-click="changeFilter()" class="timelineTableFooter">
+
+                    <td>
+                        <div class="timelineFooterYearHistoric"></div>
+                    </td>
+                    <td>
+                        <div>Historical context</div>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="timelineDisplayCheckbox" class="pull-right">
+                    </td>
+
+                </tr>
+
+            </table>
+        </div>
+    </nav>
+</footer>

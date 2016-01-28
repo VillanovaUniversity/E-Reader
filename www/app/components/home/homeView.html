@@ -1,0 +1,78 @@
+<style>
+    html {
+        background: url('content/images/homeBackground.jpg');
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .homeNavContainer {
+        background-color: rgba(0, 0, 0, .4);
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        display: block;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .homeNavContainer a {
+        display: block;
+        color: white;
+    }
+    
+    .homeNavContainer a label {
+        margin: 5% 5% 0%;
+    }
+    
+    .homeNavContainer.sidebar {
+        height: 100%;
+        width: 100px;
+        border-right: 1px solid white;
+    }
+    
+    .homeNavContainer.sidebar a img {
+        height: 100%;
+        max-width: 80px;
+        max-height: 80px;
+        padding: 10% 0px;
+    }
+    
+    .homeNavContainer.bottombar {
+        width: 100%;
+        border-top: 1px solid white;
+    }
+    
+    .homeNavContainer.bottombar div {
+        display: inline-block;
+    }
+    
+    label {
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+</style>
+
+
+<div class="visible-xs-block homeNavContainer sidebar">
+
+    <a ui-sref="{{::page.slug}}" ng-repeat="page in ::views" ng-attr-style="height: {{::percentage}}%">
+        <img ng-src='assets/images/icons/{{::page.slug}}.png' alt='{{::page.label}}'>
+    </a>
+
+</div>
+
+<div class="homeNavContainer bottombar visible-s-block visible-sm-block visible-md-block visible-lg-block">
+
+    <div ng-repeat="page in ::views" ng-attr-style="width: {{::percentage}}%">
+
+        <a ui-sref="{{::page.slug}}">
+            <img ng-src='assets/images/icons/{{::page.slug}}.png' alt='{{::page.label}}'>
+            <br>
+            <label>{{::page.label}}</label>
+        </a>
+
+    </div>
+</div>

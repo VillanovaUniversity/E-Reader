@@ -1,0 +1,102 @@
+<style>
+    audio {
+        width: 100%;
+    }
+    
+    div.row.profile-row:hover {
+        cursor: pointer;
+    }
+    
+    div.track-row {
+        margin: 10px;
+    }
+    
+    .clickable:hover {
+        cursor: pointer;
+    }
+    
+    #audioView button {
+        background-size: contain;
+        height: 30px;
+        width: 30px;
+        border: none !important;
+        background-color: transparent;
+    }
+    
+    #audioView button:hover, button:focus {
+        background-color: none !important;
+        opacity: 1;
+    }
+    
+    #audioView button.download-button {
+        background-image: url("assets/images/icons/black_download.png");
+        opacity: .5;
+    }
+    
+    #audioView button.cached-button {
+        background-image: url("assets/images/icons/black_downloaded.png");
+    }
+    
+    #audioView button.downloading-button {
+        background-image: url("assets/images/icons/black_download.png");
+        animation: blink 1.5s;
+        animation-iteration-count: infinite;
+    }
+    
+    .truncate {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    
+    @keyframes blink {
+        0% {
+            opacity: .5;
+        }
+        50% {
+            opacity: .2;
+        }
+        100% {
+            opacity: .5;
+        }
+    }
+</style>
+
+<div id='audioView' class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="track in tracks">
+
+        <div class="row track-row">
+            <div class="col-xs-1 col-md-1 clickable" ng-click="play(track)">
+                <img src='assets/images/icons/audioWave.png' width=25 style='margin-left:-8px' ng-show="playingTrack == track">
+                <span ng-hide="playingTrack == track">{{$index+1}}</span>
+            </div>
+            <div class="col-xs-9 col-md-9 truncate clickable" ng-click="play(track)">
+
+                Book {{track.Book}} - {{track.Title}}
+                <br><a ui-sref="audio" ng-click="showContributorModal(track.Reader)" stop-event="touchStart touchend click">{{track.Reader}}</a>
+
+            </div>
+            <div class="col-xs-1 col-md-1">
+                <button ng-if="!track.cacheStatus" class="btn download-button" ng-click="toggleCacheTrack(track)"> </button>
+                <button ng-if="track.cacheStatus == 'Saved'" class="btn cached-button" ng-click="toggleCacheTrack(track)"> </button>
+                <button ng-if="track.cacheStatus == 'Downloading'" class="btn downloading-button" ng-click="toggleCacheTrack(track)"> </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer ng-show="playingTrack">
+    <div>
+        <nav class='navbar navbar-default navbar-fixed-bottom'>
+            <div class='container'>
+                <div class="col-md-6">
+                    <p>Now Playing: {{playingTrack.Title}}</p>
+                </div>
+                <div class="col-md-6">
+                    <audio id="audioPlayer" controls></audio>
+                </div>
+            </div>
+        </nav>
+    </div>
+</footer>
